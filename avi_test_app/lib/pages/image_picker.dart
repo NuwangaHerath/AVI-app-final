@@ -161,7 +161,7 @@ class _ImageInput extends State<ImageInput> {
           duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
        Alert(
         context: context,
-        type: AlertType.success,
+        //type: AlertType.success,
         title: "Result",
         image: Image.network('http://192.168.43.132/flutterdemoapi/cropped.jpg'),
         desc: response['response'],
