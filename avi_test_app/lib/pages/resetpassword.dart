@@ -36,7 +36,7 @@ class _ResetpassState extends State<Resetpass> {
 
   Future<Map<String, dynamic>> _reset() async {
     final resetrequest = http.MultipartRequest(
-        'POST', Uri.parse("http://192.168.43.132/flutterdemoapi/reset.php"));
+        'POST', Uri.parse("http://54.198.249.172/flutterdemoapi_x/reset.php"));
 
     resetrequest.fields['password1'] = pass1.text.toString();
     resetrequest.fields['password2'] = pass2.text.toString();
@@ -74,7 +74,7 @@ class _ResetpassState extends State<Resetpass> {
         desc: msg,
         buttons: [
           DialogButton(
-            color: Colors.orange,
+            color: Colors.lightGreen[500],
             child: Text(
               "Cancel",
               style: TextStyle(color: Colors.white, fontSize: 17),
@@ -95,7 +95,7 @@ class _ResetpassState extends State<Resetpass> {
         desc: msg,
         buttons: [
           DialogButton(
-            color: Colors.orange,
+            color: Colors.lightGreen[500],
             child: Text(
               "Cancel",
               style: TextStyle(color: Colors.white, fontSize: 17),
@@ -117,7 +117,7 @@ class _ResetpassState extends State<Resetpass> {
         desc: msg,
         buttons: [
           DialogButton(
-            color: Colors.orange,
+            color: Colors.lightGreen[500],
             child: Text(
               "Cancel",
               style: TextStyle(color: Colors.white, fontSize: 17),
@@ -146,7 +146,7 @@ class _ResetpassState extends State<Resetpass> {
     return Scaffold(
       appBar: AppBar(
         title: Text("         Reset Password"),
-        backgroundColor: Colors.orange[700],
+        backgroundColor: Colors.lightGreen[800],
         actions: <Widget>[
           IconButton(
             icon: Icon(
@@ -189,8 +189,8 @@ class _ResetpassState extends State<Resetpass> {
               ),
               RaisedButton(
                 child: Text("Reset"),
-                color: Colors.orangeAccent,
-                hoverColor: Colors.deepOrange,
+                color: Colors.lightGreen[500],
+                hoverColor: Colors.lightGreen[800],
                 onPressed: () {
                   _resetstart();
                 },

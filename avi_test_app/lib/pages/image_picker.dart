@@ -38,7 +38,7 @@ class _ImageInput extends State<ImageInput> {
   // To track the file uploading state
   bool _isUploading = false;
 
-  String baseUrl = 'http://192.168.43.132/flutterdemoapi/api.php';
+  String baseUrl = 'http://54.198.249.172/flutterdemoapi_x/api.php';
 
   void _getImage(BuildContext context, ImageSource source) async {
     File image = await ImagePicker.pickImage(source: source);
@@ -120,7 +120,7 @@ class _ImageInput extends State<ImageInput> {
         desc: "Image Upload Failed!!!",
         buttons: [
           DialogButton(
-            color: Colors.orange,
+            color: Colors.lightGreen[500],
             child: Text(
               "Cancel",
               style: TextStyle(color: Colors.white, fontSize: 17),
@@ -140,7 +140,7 @@ class _ImageInput extends State<ImageInput> {
         desc: response['error'],
         buttons: [
           DialogButton(
-            color: Colors.orange,
+            color: Colors.lightGreen[500],
             child: Text(
               "Cancel",
               style: TextStyle(color: Colors.white, fontSize: 17),
@@ -163,11 +163,11 @@ class _ImageInput extends State<ImageInput> {
         context: context,
         //type: AlertType.success,
         title: "Result",
-        image: Image.network('http://192.168.43.132/flutterdemoapi/cropped.jpg'),
+        image: Image.network('http://54.198.249.172/flutterdemoapi_x/cropped.jpg'),
         desc: response['response'],
         buttons: [
           DialogButton(
-            color: Colors.orange,
+            color: Colors.lightGreen[500],
             child: Text(
               "Cancel",
               style: TextStyle(color: Colors.white, fontSize: 17),
@@ -200,6 +200,7 @@ class _ImageInput extends State<ImageInput> {
         builder: (BuildContext context) {
           return Container(
             height: 300.0,
+            color: Colors.white70,
             padding:
                 EdgeInsets.only(top: 20.0, bottom: 20, left: 5.0, right: 5.0),
             child: Column(
@@ -214,7 +215,7 @@ class _ImageInput extends State<ImageInput> {
                 Material(
                     elevation: 5.0,
                     borderRadius: BorderRadius.circular(30.0),
-                    color: Colors.orange,
+                    color: Colors.lightGreen[500],
                     child: MaterialButton(
                       minWidth: MediaQuery.of(context).size.width,
                       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -239,7 +240,7 @@ class _ImageInput extends State<ImageInput> {
                 Material(
                     elevation: 5.0,
                     borderRadius: BorderRadius.circular(30.0),
-                    color: Colors.orange,
+                    color: Colors.lightGreen[500],
                     child: MaterialButton(
                       minWidth: MediaQuery.of(context).size.width,
                       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -289,7 +290,7 @@ class _ImageInput extends State<ImageInput> {
                 Material(
                     elevation: 5.0,
                     borderRadius: BorderRadius.circular(30.0),
-                    color: Colors.orange,
+                    color: Colors.lightGreen[500],
                     child: MaterialButton(
                       minWidth: MediaQuery.of(context).size.width,
                       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -310,7 +311,7 @@ class _ImageInput extends State<ImageInput> {
                 Material(
                     elevation: 5.0,
                     borderRadius: BorderRadius.circular(30.0),
-                    color: Colors.orange,
+                    color: Colors.lightGreen[500],
                     child: MaterialButton(
                       minWidth: MediaQuery.of(context).size.width,
                       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -333,9 +334,10 @@ class _ImageInput extends State<ImageInput> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(
         title: Text("         Welcome to AVI"),
-        backgroundColor: Colors.orange[700],
+        backgroundColor: Colors.lightGreen[800],
         actions: <Widget>[
           IconButton(
             icon: Icon(
@@ -355,7 +357,7 @@ class _ImageInput extends State<ImageInput> {
             padding: const EdgeInsets.only(top: 40.0, left: 10.0, right: 10.0),
             child: OutlineButton(
               onPressed: () => _openImagePickerModal(context),
-              borderSide: BorderSide(color: Colors.deepOrange, width: 1.0),
+              borderSide: BorderSide(color: Colors.lightGreen, width: 1.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -373,7 +375,7 @@ class _ImageInput extends State<ImageInput> {
               : Image.file(
                   _imageFile,
                   fit: BoxFit.cover,
-                  height: 100.0,
+                  height: 200.0,
                   alignment: Alignment.topCenter,
                   width: MediaQuery.of(context).size.width,
                 ),

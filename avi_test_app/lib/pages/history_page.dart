@@ -15,9 +15,10 @@ class _HistoryPageState extends State<HistoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.lightGreen[100],
       appBar: AppBar(
         title: Text('          Recent History'),
-        backgroundColor: Colors.orange[700],
+        backgroundColor: Colors.lightGreen[800],
         actions: <Widget>[
           IconButton(
             icon: Icon(
@@ -40,6 +41,7 @@ class _HistoryPageState extends State<HistoryPage> {
                   itemCount: snapshot.data.length,
                   itemBuilder: (context, index) {
                     return Card(
+                      color: Colors.lightGreen[200],
                       child: ListTile(
                         leading: Text(data[index].vehiclenumber),
                         title: Text(data[index].datetime),

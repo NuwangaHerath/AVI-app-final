@@ -32,7 +32,7 @@ class _LoggerState extends State<Logger> {
 
   Future<Map<String, dynamic>> _login() async {
     final loginrequest = http.MultipartRequest(
-        'POST', Uri.parse("http://192.168.43.132/flutterdemoapi/login.php"));
+        'POST', Uri.parse("http://54.198.249.172/flutterdemoapi_x/login.php"));
 
     loginrequest.fields['username'] = user.text.toString();
     loginrequest.fields['password'] = pass.text.toString();
@@ -71,7 +71,7 @@ class _LoggerState extends State<Logger> {
         desc: msg,
         buttons: [
           DialogButton(
-            color: Colors.orange,
+            color: Colors.lightGreen[500],
             child: Text(
               "Cancel",
               style: TextStyle(color: Colors.white, fontSize: 17),
@@ -92,7 +92,7 @@ class _LoggerState extends State<Logger> {
         desc: msg,
         buttons: [
           DialogButton(
-            color: Colors.orange,
+            color: Colors.lightGreen[500],
             child: Text(
               "Cancel",
               style: TextStyle(color: Colors.white, fontSize: 17),
@@ -119,7 +119,7 @@ class _LoggerState extends State<Logger> {
         desc: msg,
         buttons: [
           DialogButton(
-            color: Colors.orange,
+            color: Colors.lightGreen[500],
             child: Text(
               "Cancel",
               style: TextStyle(color: Colors.white, fontSize: 17),
@@ -164,9 +164,10 @@ class _LoggerState extends State<Logger> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(
         title: Text("           Login to AVI"),
-        backgroundColor: Colors.orange[700],
+        backgroundColor: Colors.lightGreen[800],
         actions: <Widget>[
           IconButton(
             icon: Icon(
@@ -194,7 +195,7 @@ class _LoggerState extends State<Logger> {
                 title: new TextField(
                   controller: user,
                   decoration: InputDecoration(hintText: 'Username'),
-                  cursorColor: Colors.deepOrange,
+                  cursorColor: Colors.lightGreen[700],
                 ),
               ),
               new ListTile(
@@ -206,13 +207,13 @@ class _LoggerState extends State<Logger> {
                   controller: pass,
                   obscureText: true,
                   decoration: InputDecoration(hintText: 'Password'),
-                  cursorColor: Colors.deepOrange,
+                  cursorColor: Colors.lightGreen[700],
                 ),
               ),
               RaisedButton(
                 child: Text("Login"),
-                color: Colors.orangeAccent,
-                hoverColor: Colors.deepOrange,
+                color: Colors.lightGreen[600],
+                hoverColor: Colors.lightGreen[800],
                 onPressed: () {
                   _logstart();
                 },

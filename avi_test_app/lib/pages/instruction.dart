@@ -10,6 +10,13 @@ class _InstructionState extends State<Instructions> {
    final title = "ListView List";
 
     List choices = const [
+       const Choice(
+          title: 'HOW TO USE THE APP',
+          date: '1 June 2019',
+          description:
+              '\n1- Make sure you have given all the permissions to the app.\n2- Turn on GPS service of your mobile before you use any service. \n ',
+          imglink:
+              ''),
       const Choice(
           title: 'Add Image',
           date: '1 June 2019',
@@ -77,9 +84,10 @@ class _InstructionState extends State<Instructions> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.lightGreen[100],
        appBar: AppBar(
         title: Text("           Instructions"),
-        backgroundColor: Colors.orange[700],
+        backgroundColor: Colors.lightGreen[800],
         actions: <Widget>[
           IconButton(
             icon: Icon(
@@ -140,7 +148,7 @@ class ChoiceCard extends StatelessWidget {
       textStyle = textStyle.copyWith(color: Colors.lightGreenAccent[400]);
 
     return Card(
-        color: Colors.white,
+        color: Colors.lightGreen[300],
         child: Column(
           children: [
             new Container(

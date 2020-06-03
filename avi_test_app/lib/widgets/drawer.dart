@@ -17,10 +17,10 @@ class DrawerUI extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: <Widget>[
-          new Container(color: Colors.orange,),
+          new Container(color: Colors.lightGreen[800],),
           UserAccountsDrawerHeader(
              decoration: BoxDecoration(
-        color: Colors.orange[700],
+        color: Colors.lightGreen[800],
     ),
             accountName: Text(username),
             accountEmail: Text('Userid: '+userid+'  Branchid: '+branchid),
