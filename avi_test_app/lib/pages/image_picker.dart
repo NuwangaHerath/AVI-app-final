@@ -79,6 +79,8 @@ class _ImageInput extends State<ImageInput> {
         _position.timestamp.toLocal().toString();
     imageUploadRequest.fields['method'] = method;
     imageUploadRequest.files.add(file);
+    imageUploadRequest.fields['userid']= userid.toString();
+    imageUploadRequest.fields['branchid']= branchid.toString();
 
     latitude = _position.latitude.toString();
     longitude = _position.longitude.toString();

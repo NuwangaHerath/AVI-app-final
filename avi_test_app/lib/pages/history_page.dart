@@ -44,13 +44,13 @@ class _HistoryPageState extends State<HistoryPage> {
                       color: Colors.lightGreen[200],
                       child: ListTile(
                         leading: Text(data[index].vehiclenumber),
-                        title: Text(data[index].datetime),
+                        title: Text(data[index].isBlacklisted),
                         subtitle: Text("Latitude - " +
                             data[index].latitude +
                             " \nLongitude - " +
                             data[index].longitude +
-                            "\nResponse - " +
-                            data[index].isBlacklisted),
+                            "\nDatetime - " + data[index].datetime 
+                            ),
                       ),
                     );
                   },
