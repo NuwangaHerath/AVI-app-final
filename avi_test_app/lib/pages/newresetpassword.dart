@@ -27,7 +27,7 @@ class _ResetpassState extends State<NewResetpass> {
 
   Future<Map<String, dynamic>> _reset() async {
     final resetrequest = http.MultipartRequest(
-        'POST', Uri.parse("http://54.198.249.172/flutterdemoapi_x/newreset.php"));
+        'POST', Uri.parse("http://54.81.132.149/flutterdemoapi_x/newreset.php"));
 
     resetrequest.fields['password1'] = pass1.text.toString();
     resetrequest.fields['password2'] = pass2.text.toString();
@@ -65,7 +65,7 @@ class _ResetpassState extends State<NewResetpass> {
         desc: msg,
         buttons: [
           DialogButton(
-            color: Colors.lightGreen[500],
+            color: Colors.teal[500],
             child: Text(
               "Cancel",
               style: TextStyle(color: Colors.white, fontSize: 17),
@@ -86,7 +86,7 @@ class _ResetpassState extends State<NewResetpass> {
         desc: msg,
         buttons: [
           DialogButton(
-            color: Colors.lightGreen[500],
+            color: Colors.teal[500],
             child: Text(
               "Cancel",
               style: TextStyle(color: Colors.white, fontSize: 17),
@@ -107,7 +107,7 @@ class _ResetpassState extends State<NewResetpass> {
         desc: msg,
         buttons: [
           DialogButton(
-            color: Colors.lightGreen[500],
+            color: Colors.teal[500],
             child: Text(
               "Cancel",
               style: TextStyle(color: Colors.white, fontSize: 17),
@@ -129,10 +129,9 @@ class _ResetpassState extends State<NewResetpass> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       appBar: AppBar(
-        title: Text("         Reset Password"),
-        backgroundColor: Colors.lightGreen[800],
+        title: Text("Reset Password"),
+        backgroundColor: Colors.teal[700],
         actions: <Widget>[
           IconButton(
             icon: Icon(
@@ -146,7 +145,34 @@ class _ResetpassState extends State<NewResetpass> {
         ],
       ),
       body: Container(
-        child: Center(
+      decoration: BoxDecoration(
+      color: Colors.yellow[50],
+    ),
+    child:Center(
+    child:Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: <Widget>[
+    SizedBox(
+    height: 155.0,
+    child: Image.asset(
+    'assets/password.png',
+    fit: BoxFit.contain,
+    ),
+    ),
+    Container(
+    decoration: BoxDecoration(
+    color: Colors.teal[50],
+    borderRadius: new BorderRadius.only(
+    topLeft: const Radius.circular(20.0),
+    bottomLeft: const Radius.circular(20.0),
+    bottomRight: const Radius.circular(20.0),
+    topRight: const Radius.circular(20.0),
+    )
+    ),
+    margin: const EdgeInsets.all(15.0),
+    padding: EdgeInsets.all(15.0),
+    child: Center(
           child: Column(
             children: <Widget>[
               new ListTile(
@@ -158,7 +184,7 @@ class _ResetpassState extends State<NewResetpass> {
                   controller: username,
                   obscureText: false,
                   decoration: InputDecoration(hintText: 'Username'),
-                  cursorColor: Colors.deepOrange,
+                  cursorColor: Colors.teal,
                 ),
               ),
               new ListTile(
@@ -170,7 +196,7 @@ class _ResetpassState extends State<NewResetpass> {
                   controller: cpass,
                   obscureText: true,
                   decoration: InputDecoration(hintText: 'Current Password'),
-                  cursorColor: Colors.deepOrange,
+                  cursorColor: Colors.teal,
                 ),
               ),
               new ListTile(
@@ -182,7 +208,7 @@ class _ResetpassState extends State<NewResetpass> {
                   controller: pass1,
                   obscureText: true,
                   decoration: InputDecoration(hintText: 'New Password'),
-                  cursorColor: Colors.deepOrange,
+                  cursorColor: Colors.teal,
                 ),
               ),
               new ListTile(
@@ -194,16 +220,22 @@ class _ResetpassState extends State<NewResetpass> {
                   controller: pass2,
                   obscureText: true,
                   decoration: InputDecoration(hintText: 'Re-enter Password'),
-                  cursorColor: Colors.deepOrange,
+                  cursorColor: Colors.teal,
                 ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
               ),
               RaisedButton(
                 child: Text("Reset"),
-                color: Colors.lightGreen[600],
-                hoverColor: Colors.lightGreen[800],
+                color: Colors.teal[600],
+                hoverColor: Colors.teal[800],
                 onPressed: () {
                   _resetstart();
                 },
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
               ),
               //Text(
                 //msg,
@@ -213,6 +245,7 @@ class _ResetpassState extends State<NewResetpass> {
           ),
         ),
       ),
+    ])))
     );
   }
 }

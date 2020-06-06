@@ -32,7 +32,7 @@ class _LoggerState extends State<Logger> {
 
   Future<Map<String, dynamic>> _login() async {
     final loginrequest = http.MultipartRequest(
-        'POST', Uri.parse("http://54.198.249.172/flutterdemoapi_x/login.php"));
+        'POST', Uri.parse("http://54.81.132.149/flutterdemoapi_x/login.php"));
 
     loginrequest.fields['username'] = user.text.toString();
     loginrequest.fields['password'] = pass.text.toString();
@@ -71,7 +71,7 @@ class _LoggerState extends State<Logger> {
         desc: msg,
         buttons: [
           DialogButton(
-            color: Colors.lightGreen[500],
+            color: Colors.teal[500],
             child: Text(
               "Cancel",
               style: TextStyle(color: Colors.white, fontSize: 17),
@@ -92,7 +92,7 @@ class _LoggerState extends State<Logger> {
         desc: msg,
         buttons: [
           DialogButton(
-            color: Colors.lightGreen[500],
+            color: Colors.teal[500],
             child: Text(
               "Cancel",
               style: TextStyle(color: Colors.white, fontSize: 17),
@@ -119,7 +119,7 @@ class _LoggerState extends State<Logger> {
         desc: msg,
         buttons: [
           DialogButton(
-            color: Colors.lightGreen[500],
+            color: Colors.teal[500],
             child: Text(
               "Cancel",
               style: TextStyle(color: Colors.white, fontSize: 17),
@@ -164,10 +164,10 @@ class _LoggerState extends State<Logger> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      resizeToAvoidBottomPadding: false,
       appBar: AppBar(
-        title: Text("           Login to AVI"),
-        backgroundColor: Colors.lightGreen[800],
+        title: Text("A V I Login"),
+        backgroundColor: Colors.teal[700],
         actions: <Widget>[
           IconButton(
             icon: Icon(
@@ -180,51 +180,89 @@ class _LoggerState extends State<Logger> {
           )
         ],
       ),
-      //AppBar(
-      //title: Text("AVI Login"),
-      //),
-      body: Container(
-        child: Center(
+      body:Container(
+        decoration: BoxDecoration(
+          color: Colors.yellow[50],
+        ),
+          child:Center(
+      child:Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          SizedBox(
+            height: 155.0,
+            child: Image.asset(
+              'assets/padlock1.png',
+              fit: BoxFit.contain,
+            ),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.teal[50],
+                borderRadius: new BorderRadius.only(
+            topLeft: const Radius.circular(20.0),
+            bottomLeft: const Radius.circular(20.0),
+            bottomRight: const Radius.circular(20.0),
+            topRight: const Radius.circular(20.0),
+          )
+            ),
+            margin: const EdgeInsets.all(15.0),
+
+            child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 5.0),
+              ),
               new ListTile(
                 leading: const Icon(
                   Icons.person,
-                  color: Colors.black,
+                  color: Colors.teal,
                 ),
                 title: new TextField(
                   controller: user,
                   decoration: InputDecoration(hintText: 'Username'),
-                  cursorColor: Colors.lightGreen[700],
+                  cursorColor: Colors.teal[700],
                 ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 5.0),
               ),
               new ListTile(
                 leading: const Icon(
-                  Icons.enhanced_encryption,
-                  color: Colors.black,
+                  Icons.lock,
+                  color: Colors.teal,
                 ),
                 title: new TextField(
                   controller: pass,
                   obscureText: true,
                   decoration: InputDecoration(hintText: 'Password'),
-                  cursorColor: Colors.lightGreen[700],
+                  cursorColor: Colors.teal[700],
                 ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 5.0),
               ),
               RaisedButton(
                 child: Text("Login"),
-                color: Colors.lightGreen[600],
-                hoverColor: Colors.lightGreen[800],
+                color: Colors.teal[600],
+                hoverColor: Colors.teal[800],
                 onPressed: () {
                   _logstart();
                 },
               ),
-             // Text(
-              //  msg,
-              //  style: TextStyle(fontSize: 18.0, color: Colors.red[600]),
-             // )
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
+              ),
             ],
           ),
         ),
+      )
+              ]
+      ),
+          ),
       ),
     );
   }

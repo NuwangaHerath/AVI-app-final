@@ -17,10 +17,10 @@ class DrawerUI extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: <Widget>[
-          new Container(color: Colors.lightGreen[800],),
+          new Container(color: Colors.teal[300],),
           UserAccountsDrawerHeader(
              decoration: BoxDecoration(
-        color: Colors.lightGreen[800],
+        color: Colors.teal[500],
     ),
             accountName: Text(username),
             accountEmail: Text('Userid: '+userid+'  Branchid: '+branchid),
@@ -30,17 +30,9 @@ class DrawerUI extends StatelessWidget {
           'assets/avi.JPG',
         ),
     ),
-              backgroundColor: Theme.of(context).platform == TargetPlatform.iOS
-                  ? Colors.orange[700]
+              backgroundColor: Theme.of(context).platform == TargetPlatform.android
+                  ? Colors.teal[500]
                   : Colors.white,
-              
-              //backgroundImage: Image.asset('assets/avi.JPG'),
-              //child:
-              //Text(
-               // "U",
-               // style: TextStyle(fontSize: 40.0, color: Colors.orange[900]),
-                
-             // ),
             ),
           ),
           Padding(
@@ -48,7 +40,8 @@ class DrawerUI extends StatelessWidget {
           ),
           ListTile(
             title: Text("Login"),
-            trailing: Icon(Icons.supervised_user_circle),
+            trailing: Icon(Icons.supervised_user_circle,
+            color: Colors.teal,),
             onTap: () {
               Navigator.push(
                 context,
@@ -58,7 +51,8 @@ class DrawerUI extends StatelessWidget {
           ),
           ListTile(
             title: Text("Recent History"),
-            trailing: Icon(Icons.history),
+            trailing: Icon(Icons.history,
+            color: Colors.teal,),
             onTap: () {
               Navigator.push(
                 context,
@@ -68,7 +62,8 @@ class DrawerUI extends StatelessWidget {
           ),
           ListTile(
             title: Text("Instructions"),
-            trailing: Icon(Icons.info),
+            trailing: Icon(Icons.info,
+              color: Colors.teal,),
             onTap: () {
               Navigator.push(
                 context,
@@ -78,7 +73,8 @@ class DrawerUI extends StatelessWidget {
           ),
           ListTile(
             title: Text("Reset Password"),
-            trailing: Icon(Icons.lock),
+            trailing: Icon(Icons.lock,
+              color: Colors.teal,),
             onTap: () {
               Navigator.push(
                 context,
@@ -95,11 +91,13 @@ class DrawerUI extends StatelessWidget {
           ),
           ListTile(
             title: Text("Settings"),
-            trailing: Icon(Icons.settings),
+            trailing: Icon(Icons.settings,
+              color: Colors.teal,),
           ),
           ListTile(
             title: Text("Share"),
-            trailing: Icon(Icons.share),
+            trailing: Icon(Icons.share,
+              color: Colors.teal,),
           ),
         ],
       ),

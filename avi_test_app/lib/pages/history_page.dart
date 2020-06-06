@@ -15,10 +15,10 @@ class _HistoryPageState extends State<HistoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightGreen[100],
+      backgroundColor: Colors.lightGreen[50],
       appBar: AppBar(
-        title: Text('          Recent History'),
-        backgroundColor: Colors.lightGreen[800],
+        title: Text('Recent History'),
+        backgroundColor: Colors.teal[700],
         actions: <Widget>[
           IconButton(
             icon: Icon(
@@ -31,7 +31,11 @@ class _HistoryPageState extends State<HistoryPage> {
           )
         ],
       ),
-      body: FutureBuilder<List>(
+      body: Container(
+    decoration: new BoxDecoration(
+    color: Colors.yellow[50],
+    ),
+        child:FutureBuilder<List>(
         future: db.getHistory(),
         initialData: List(),
         builder: (context, snapshot) {
@@ -40,18 +44,31 @@ class _HistoryPageState extends State<HistoryPage> {
               ? ListView.builder(
                   itemCount: snapshot.data.length,
                   itemBuilder: (context, index) {
-                    return Card(
-                      color: Colors.lightGreen[200],
-                      child: ListTile(
-                        leading: Text(data[index].vehiclenumber),
-                        title: Text(data[index].isBlacklisted),
-                        subtitle: Text("Latitude - " +
+                    return Container(
+                      margin: EdgeInsets.all(10.0),
+                      decoration: new BoxDecoration(
+                          color: Colors.teal[50],
+                          borderRadius: new BorderRadius.only(
+                            topLeft: const Radius.circular(20.0),
+                            bottomLeft: const Radius.circular(20.0),
+                            bottomRight: const Radius.circular(20.0),
+                            topRight: const Radius.circular(20.0),
+                          )
+                      ),
+                      padding: new EdgeInsets.all(10.0),
+                    child: ListTile(
+                        leading: Text(data[index].vehiclenumber,
+                        style:TextStyle(fontWeight: FontWeight.bold),),
+                        title: Text(data[index].isBlacklisted,
+                          style:TextStyle(fontWeight: FontWeight.bold),),
+                      subtitle: Text("Latitude - " +
                             data[index].latitude +
                             " \nLongitude - " +
                             data[index].longitude +
                             "\nDatetime - " + data[index].datetime 
                             ),
                       ),
+
                     );
                   },
                 )
@@ -59,6 +76,7 @@ class _HistoryPageState extends State<HistoryPage> {
                   child: CircularProgressIndicator(),
                 );
         },
+      ),
       ),
     );
   }

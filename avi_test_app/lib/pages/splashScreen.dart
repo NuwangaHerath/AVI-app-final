@@ -25,22 +25,36 @@ void initState() {
 @override
   Widget build(BuildContext context) {
   return new Scaffold(
-      body: Center(
+      body: Container(
+          decoration: BoxDecoration(
+            color: Colors.teal[50],
+          ),
+      child:Center(
         child:Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        /// Loader Animation Widget
-        CircularProgressIndicator(
-          valueColor: new AlwaysStoppedAnimation<Color>(
-              Colors.indigoAccent),
+        SizedBox(
+          height: 155.0,
+          child: Image.asset(
+            'assets/logo1.png',
+            fit: BoxFit.contain,
+          ),
         ),
+        Padding(
+          padding: const EdgeInsets.only(top: 200.0),
+        ),
+        Text("This application is only for the use of Sri Lanka Police",
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontWeight: FontWeight.normal
+        ),),
         Padding(
           padding: const EdgeInsets.only(top: 20.0),
         ),
       ]
   ) ,
         )
+      )
     );
-    
   }
 }

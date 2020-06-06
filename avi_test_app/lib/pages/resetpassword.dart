@@ -36,7 +36,7 @@ class _ResetpassState extends State<Resetpass> {
 
   Future<Map<String, dynamic>> _reset() async {
     final resetrequest = http.MultipartRequest(
-        'POST', Uri.parse("http://54.198.249.172/flutterdemoapi_x/reset.php"));
+        'POST', Uri.parse("http://54.81.132.149/flutterdemoapi_x/reset.php"));
 
     resetrequest.fields['password1'] = pass1.text.toString();
     resetrequest.fields['password2'] = pass2.text.toString();

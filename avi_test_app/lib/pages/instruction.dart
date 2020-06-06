@@ -84,10 +84,10 @@ class _InstructionState extends State<Instructions> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightGreen[100],
+      backgroundColor: Colors.yellow[50],
        appBar: AppBar(
         title: Text("           Instructions"),
-        backgroundColor: Colors.lightGreen[800],
+        backgroundColor: Colors.teal[700],
         actions: <Widget>[
           IconButton(
             icon: Icon(
@@ -145,10 +145,10 @@ class ChoiceCard extends StatelessWidget {
     TextStyle textStyle = Theme.of(context).textTheme.display1;
 
     if (selected)
-      textStyle = textStyle.copyWith(color: Colors.lightGreenAccent[400]);
+      textStyle = textStyle.copyWith(color: Colors.teal[50]);
 
     return Card(
-        color: Colors.lightGreen[300],
+        color: Colors.teal[50],
         child: Column(
           children: [
             new Container(
