@@ -34,7 +34,7 @@
     }
 	
 	public function Login($username,$password1){
-		$query="SELECT userID,branchID,isReset FROM users WHERE username='$username' AND password='$password1'";
+		$query="SELECT userID,branchID,isReset,branchName FROM users natural join branch WHERE username='$username' AND password='$password1'";
 		$res=$this->controller->logincheck($query);
 		if ($res!=null){
           return ($res);

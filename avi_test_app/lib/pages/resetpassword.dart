@@ -16,12 +16,14 @@ class Resetpass extends StatefulWidget {
   final String userid;
   final String username;
   final String branchid;
+  final String branchname;
   final String password;
   Resetpass({
     Key key,
     this.userid,
     this.username,
     this.branchid,
+    this.branchname,
     this.password,
   }) : super(key: key);
   @override
@@ -110,31 +112,16 @@ class _ResetpassState extends State<Resetpass> {
       msg = datauser['response'];
       Toast.show(datauser['response'], context,
           duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
-      Alert(
-        context: context,
-        type: AlertType.success,
-        title: "Reset Succesfull",
-        desc: msg,
-        buttons: [
-          DialogButton(
-            color: Colors.lightGreen[500],
-            child: Text(
-              "Cancel",
-              style: TextStyle(color: Colors.white, fontSize: 17),
-            ),
-            onPressed: () => Navigator.pop(context),
-            width: 120,
-          )
-        ],
-      ).show();
+      
 
-      Navigator.push(
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(
             builder: (context) => ImageInput(
                   userid: userid,
                   username: username,
                   branchid: branchid,
+                  branchname: branchname,
                 )),
       );
     }

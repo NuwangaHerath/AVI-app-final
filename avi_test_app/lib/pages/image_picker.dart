@@ -23,7 +23,8 @@ class ImageInput extends StatefulWidget {
   final String userid;
   final String username;
   final String branchid;
-  ImageInput({Key key, this.userid, this.username, this.branchid})
+  final String branchname;
+  ImageInput({Key key, this.userid, this.username, this.branchid, this.branchname})
       : super(key: key);
   @override
   State<StatefulWidget> createState() {
@@ -345,7 +346,8 @@ class _ImageInput extends State<ImageInput> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return WillPopScope(child: 
+    Scaffold(
       
       appBar: AppBar(
         title: Text("A V I Home"),
@@ -362,7 +364,7 @@ class _ImageInput extends State<ImageInput> {
           )
         ],
       ),
-      drawer: DrawerUI(username: username, userid: userid, branchid: branchid),
+      drawer: DrawerUI(username: username, userid: userid, branchname: branchname),
       body: Container(
           decoration: BoxDecoration(
             color: Colors.yellow[50],
@@ -399,7 +401,7 @@ class _ImageInput extends State<ImageInput> {
         ],
       )
       ),
-    );
+    ), onWillPop: () => Future.value(false));
   }
 }
 

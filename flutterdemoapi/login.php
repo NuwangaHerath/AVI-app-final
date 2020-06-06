@@ -12,7 +12,7 @@ if(isset($_POST["username"])) {
    	echo json_encode(['error' => "Invalid User name or Password"]);
    	
     }else{
-		echo json_encode(['response' => "Login Successfully",'username'=>$username,'userID'=>$result['userID'],'branchID'=>$result['branchID'],'isReset'=>$result['isReset']]);
+		echo json_encode(['response' => "Login Successfully",'username'=>$username,'userID'=>$result['userID'],'branchID'=>$result['branchID'],'isReset'=>$result['isReset'], 'branchname'=>$result['branchName']]);
         
     }
 	}

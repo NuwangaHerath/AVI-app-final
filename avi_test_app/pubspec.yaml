@@ -54,14 +54,14 @@ flutter:
   uses-material-design: true
   assets: 
     - assets/avi.JPG
-    - assets/addimage.jpg
+    - assets/addimage.jpeg
     - assets/menu.jpg
-    - assets/camera.jpg
-    - assets/gallery.jpg
-    - assets/check.jpg
-    - assets/blacklist.jpg
-    - assets/reset.jpg
-    - assets/drawer.jpg
+    - assets/camera.jpeg
+    - assets/gallery.jpeg
+    - assets/check.jpeg
+    - assets/blacklist.jpeg
+    - assets/reset.jpeg
+    - assets/drawer.jpeg
     - assets/padlock1.png
     - assets/padlock2.png
     - assets/logo1.png

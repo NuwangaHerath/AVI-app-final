@@ -23,35 +23,35 @@ class _InstructionState extends State<Instructions> {
           description:
               'You can start your blacklisting or checking operation by adding an image of a vehicle which contains vehicle number plate clearly. When you click on the Add Image button, AVI system gives you two options. \n [1]- Use Camera \n [2]- Use Gallery',
           imglink:
-              'assets/addimage.jpg'),
+              'assets/addimage.jpeg'),
       const Choice(
           title: 'Use Camera',
           date: '1 June 2016',
           description:
               'You can directly use the camera to capture an image of a vehicle. When you capture an image AVI system gives you two options. \n [1]- Blacklist The Vehicle \n [2]- Check The Vehicle',
           imglink:
-              'assets/camera.jpg'),
+              'assets/camera.jpeg'),
       const Choice(
           title: 'Use Gallery',
           date: '1 June 2019',
           description:
               'You can select an image from the device gallery. When you select an image AVI system gives you two options. \n [1]- Blacklist The Vehicle \n [2]- Check The Vehicle',
           imglink:
-              'assets/gallery.jpg'),
+              'assets/gallery.jpeg'),
       const Choice(
           title: 'Blacklist the Vehicle',
           date: '1 June 2017',
           description:
               'When you capture a suspected vehicle, You can blacklist the vehicle by selecting this option.',
           imglink:
-              'assets/blacklist.jpg'),
+              'assets/blacklist.jpeg'),
       const Choice(
           title: 'Check the Vehicle',
           date: '1 June 2018',
           description:
               'If you want to check a vehicle, You can do it by selecting this option.',
           imglink:
-              'assets/check.jpg'),
+              'assets/check.jpeg'),
 
       const Choice(
           title: 'Open the Menu',
@@ -59,7 +59,7 @@ class _InstructionState extends State<Instructions> {
           description:
               'Application Menu can be opened by clickng on this icon which is placed on top left corner.',
           imglink:
-              'assets/drawer.jpg'),
+              'assets/drawer.jpeg'),
 
       const Choice(
           title: 'Options in Menu',
@@ -75,7 +75,7 @@ class _InstructionState extends State<Instructions> {
           description:
               'Here you can reset your user password by providing necessary details',
           imglink:
-              'assets/reset.jpg'),
+              'assets/reset.jpeg'),
     ];
 
   
