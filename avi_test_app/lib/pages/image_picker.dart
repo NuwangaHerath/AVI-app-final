@@ -184,7 +184,7 @@ class _ImageInput extends State<ImageInput> {
       isBlacklisted = response['response'];
       var db = new DatabaseHelper();
       var history = new History(
-          vehiclenumber, datetime, latitude, longitude, isBlacklisted);
+          vehiclenumber, datetime, latitude, longitude, isBlacklisted, userid);
       await db.saveHistory(history);
     }
   }
