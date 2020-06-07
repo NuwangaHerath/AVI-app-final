@@ -1,4 +1,5 @@
 import 'package:avi_test_app/database/history.dart';
+import 'package:avi_test_app/pages/logger.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:avi_test_app/database/database.dart';
@@ -36,7 +37,7 @@ class _HistoryPageState extends State<HistoryPage> {
     color: Colors.yellow[50],
     ),
         child:FutureBuilder<List>(
-        future: db.getHistory(),
+        future: db.getHistory(userid),
         initialData: List(),
         builder: (context, snapshot) {
           var data = snapshot.data;

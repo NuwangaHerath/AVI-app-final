@@ -5,9 +5,10 @@ class History {
   String latitude;
   String longitude;
   String isBlacklisted;
+  String userid;
 
   History(this.vehiclenumber, this.datetime, this.latitude, this.longitude,
-      this.isBlacklisted);
+      this.isBlacklisted, this.userid);
 
   History.map(dynamic obj) {
     this.vehiclenumber = obj["vehiclenumber"];
@@ -15,6 +16,8 @@ class History {
     this.latitude = obj["latitude"];
     this.longitude = obj["longitude"];
     this.isBlacklisted = obj["isBlacklisted"];
+    this.userid = obj["userid"];
+    
   }
 
   String get vehicleNumber => vehiclenumber;
@@ -22,6 +25,7 @@ class History {
   String get latiTude => latitude;
   String get longiTude => longitude;
   String get isBlackListed => isBlacklisted;
+  String get userId => userid;
 
   Map<String, dynamic> toMap() {
     var map = new Map<String, dynamic>();
@@ -30,6 +34,7 @@ class History {
     map["latitude"] = latitude;
     map["longitude"] = longitude;
     map["isBlacklisted"] = isBlacklisted;
+    map["userid"] = userid;
     return map;
   }
 

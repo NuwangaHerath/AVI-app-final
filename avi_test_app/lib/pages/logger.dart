@@ -14,6 +14,7 @@ import 'package:avi_test_app/database/user.dart';
 String username;
 String userid;
 String branchid;
+String branchname;
 String isReset;
 String password;
 var db = new DatabaseHelper();
@@ -33,6 +34,7 @@ class _LoggerState extends State<Logger> {
   Future<Map<String, dynamic>> _login() async {
     final loginrequest = http.MultipartRequest(
         'POST', Uri.parse("http://54.81.132.149/flutterdemoapi_x/login.php"));
+        //'POST', Uri.parse("http://192.168.8.195/flutterdemoapi/login.php"));
 
     loginrequest.fields['username'] = user.text.toString();
     loginrequest.fields['password'] = pass.text.toString();
@@ -104,6 +106,7 @@ class _LoggerState extends State<Logger> {
       ).show();
     } else {
       branchid = (datauser['branchID']);
+      branchname = (datauser['branchname']);
       userid = (datauser['userID']);
       username = (datauser['username']);
       isReset = (datauser['isReset']);
@@ -112,46 +115,32 @@ class _LoggerState extends State<Logger> {
       await db.saveUser(user);
 
       msg = datauser['response'];
-      Alert(
-        context: context,
-        type: AlertType.success,
-        title: "Login Succesfull",
-        desc: msg,
-        buttons: [
-          DialogButton(
-            color: Colors.teal[500],
-            child: Text(
-              "Cancel",
-              style: TextStyle(color: Colors.white, fontSize: 17),
-            ),
-            onPressed: () => Navigator.pop(context),
-            width: 120,
-          )
-        ],
-      ).show();
+      
       Toast.show(datauser['response'], context,
           duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
 
       print(isReset);
       if (isReset == '0') {
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(
               builder: (context) => Resetpass(
                   userid: userid,
                   username: username,
                   branchid: branchid,
+                  branchname: branchname,
                   password: password)),
         );
       }
       if (isReset == '1') {
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(
               builder: (context) => ImageInput(
                     userid: userid,
                     username: username,
                     branchid: branchid,
+                    branchname: branchname,
                   )),
         );
       }
@@ -163,7 +152,7 @@ class _LoggerState extends State<Logger> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return WillPopScope(child: Scaffold(
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         title: Text("A V I Login"),
@@ -264,6 +253,7 @@ class _LoggerState extends State<Logger> {
       ),
           ),
       ),
-    );
+    ), onWillPop: () => Future.value(false));
+   
   }
 }

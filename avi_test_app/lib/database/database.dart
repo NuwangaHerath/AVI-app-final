@@ -38,7 +38,7 @@ class DatabaseHelper {
     print("database created");
     await db.execute("DROP TABLE IF EXISTS History");
     await db.execute(
-        "CREATE TABLE History(id INTEGER PRIMARY KEY, vehiclenumber TEXT , datetime TEXT , latitude TEXT, longitude TEXT, isBlacklisted TEXT )");
+        "CREATE TABLE History(id INTEGER PRIMARY KEY, vehiclenumber TEXT , datetime TEXT , latitude TEXT, longitude TEXT, isBlacklisted TEXT, userid TEXT )");
     await db.execute(
         "CREATE TABLE User(id INTEGER PRIMARY KEY, username TEXT NOT NULL, userid, branchid TEXT NOT NULL)");
   }
@@ -49,15 +49,17 @@ class DatabaseHelper {
     return res;
   }
 
-  Future<List<History>> getHistory() async {
+  Future<List<History>> getHistory(String userid) async {
     var dbClient = await db;
     List<Map> list = await dbClient.rawQuery('SELECT * FROM History');
     List<History> latesthistory = new List();
     for (int i = 0; i < list.length; i++) {
       var history = new History(list[i]["vehiclenumber"], list[i]["datetime"],
-          list[i]["latitude"], list[i]["longitude"], list[i]["isBlacklisted"]);
+          list[i]["latitude"], list[i]["longitude"], list[i]["isBlacklisted"], list[i]["userid"]);
       history.setHistoryId(list[i]["id"]);
+      if(history.userid==userid){
       latesthistory.add(history);
+      }
     }
     print(latesthistory.length);
     return latesthistory;
