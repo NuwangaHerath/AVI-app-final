@@ -27,7 +27,7 @@ class DrawerUI extends StatelessWidget {
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
         child: Image.asset(
-          'assets/avi.JPG',
+          'assets/avatar.png',
         ),
     ),
               backgroundColor: Theme.of(context).platform == TargetPlatform.android

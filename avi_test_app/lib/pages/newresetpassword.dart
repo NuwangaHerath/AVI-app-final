@@ -177,18 +177,6 @@ class _ResetpassState extends State<NewResetpass> {
             children: <Widget>[
               new ListTile(
                 leading: const Icon(
-                  Icons.person,
-                  color: Colors.black,
-                ),
-                title: new TextField(
-                  controller: username,
-                  obscureText: false,
-                  decoration: InputDecoration(hintText: 'Username'),
-                  cursorColor: Colors.teal,
-                ),
-              ),
-              new ListTile(
-                leading: const Icon(
                   Icons.enhanced_encryption,
                   color: Colors.black,
                 ),

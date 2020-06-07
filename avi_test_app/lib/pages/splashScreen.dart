@@ -27,7 +27,7 @@ void initState() {
   return new Scaffold(
       body: Container(
           decoration: BoxDecoration(
-            color: Colors.teal[50],
+            color: Colors.yellow[50],
           ),
       child:Center(
         child:Column(
@@ -43,18 +43,26 @@ void initState() {
         Padding(
           padding: const EdgeInsets.only(top: 200.0),
         ),
-        Text("This application is only for the use of Sri Lanka Police",
+        Container(
+        child:Center(
+          child:Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              Text("This application is only for the use of Sri Lanka Police",
         textAlign: TextAlign.center,
         style: TextStyle(
           fontWeight: FontWeight.normal
-        ),),
-        Padding(
-          padding: const EdgeInsets.only(top: 20.0),
+        ),
+        ),
+          ]
+        ),
+        ),
         ),
       ]
   ) ,
-        )
-      )
+        ),
+      ),
     );
   }
 }
