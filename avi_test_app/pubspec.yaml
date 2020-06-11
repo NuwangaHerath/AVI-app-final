@@ -54,7 +54,7 @@ flutter:
   uses-material-design: true
   assets: 
     - assets/avatar.png
-    - assets/addimage.jpg
+    - assets/addimage.jpeg
     - assets/menu.jpg
     - assets/camera.jpeg
     - assets/gallery.jpeg

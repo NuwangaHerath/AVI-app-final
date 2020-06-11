@@ -12,6 +12,8 @@ if(isset($_FILES["image"]["name"])) {
     $longitude=$_POST['longitude'];
     $dateTime=$_POST['dateTime'];
     $method=$_POST['method'];
+	$userid=$_POST['userid'];
+	$branchid=$_POST['branchid'];
     if($check !== false) {
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
             $out= exec("python object_detection_yolo.py --image=".$target_file." --output=output.txt");
@@ -24,7 +26,7 @@ if(isset($_FILES["image"]["name"])) {
                 if ($out!==""){
                     $utility=new utility();
                     if ($method==="blacklist"){
-                        $result=$utility->BlackList_Vehicle($out,$latitude,$longitude,5,$dateTime,4);
+                        $result=$utility->BlackList_Vehicle($out,$latitude,$longitude,$userid,$dateTime,$branchid);
                         if($result==="saved"){
                             echo json_encode(['response' => "Vehicle Blacklisted Successfully",'vehicleNo'=>$out,'dateTime'=>$dateTime,'latitude'=>$latitude,'longitude'=>$longitude]);
                         }else if($result=== 'isBlacklisted'){

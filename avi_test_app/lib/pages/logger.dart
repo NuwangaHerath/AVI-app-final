@@ -33,8 +33,8 @@ class _LoggerState extends State<Logger> {
 
   Future<Map<String, dynamic>> _login() async {
     final loginrequest = http.MultipartRequest(
-        'POST', Uri.parse("http://54.81.132.149/flutterdemoapi_x/login.php"));
-        //'POST', Uri.parse("http://192.168.8.195/flutterdemoapi/login.php"));
+        //'POST', Uri.parse("http://54.81.132.149/flutterdemoapi_x/login.php"));
+        'POST', Uri.parse("http://192.168.8.195/flutterdemoapi/login.php"));
 
     loginrequest.fields['username'] = user.text.toString();
     loginrequest.fields['password'] = pass.text.toString();
@@ -110,6 +110,7 @@ class _LoggerState extends State<Logger> {
       userid = (datauser['userID']);
       username = (datauser['username']);
       isReset = (datauser['isReset']);
+      print(branchname);
 
       var user = new User(username, userid, branchid);
       await db.saveUser(user);

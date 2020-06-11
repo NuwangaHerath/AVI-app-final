@@ -39,7 +39,8 @@ class _ImageInput extends State<ImageInput> {
   // To track the file uploading state
   bool _isUploading = false;
 
-  String baseUrl = 'http://54.81.132.149/flutterdemoapi_x/api.php';
+  //String baseUrl = 'http://54.81.132.149/flutterdemoapi_x/api.php';
+  String baseUrl = 'http://192.168.8.195/flutterdemoapi/api.php';
 
   void _getImage(BuildContext context, ImageSource source) async {
     File image = await ImagePicker.pickImage(source: source);
@@ -164,9 +165,8 @@ class _ImageInput extends State<ImageInput> {
           duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
        Alert(
         context: context,
-        //type: AlertType.success,
-        title: "Result",
-        image: Image.network('http://54.81.132.149/flutterdemoapi_x/cropped.jpg'),
+        type: AlertType.success,
+        title: response['vehicleNo'],
         desc: response['response'],
         buttons: [
           DialogButton(

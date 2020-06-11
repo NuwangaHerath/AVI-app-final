@@ -78,7 +78,7 @@ class DrawerUI extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => NewResetpass(userid: userid)),
+                    builder: (context) => NewResetpass(userid: userid, username: username)),
               );
             },
           ),

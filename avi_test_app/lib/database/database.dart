@@ -41,6 +41,7 @@ class DatabaseHelper {
         "CREATE TABLE History(id INTEGER PRIMARY KEY, vehiclenumber TEXT , datetime TEXT , latitude TEXT, longitude TEXT, isBlacklisted TEXT, userid TEXT )");
     await db.execute(
         "CREATE TABLE User(id INTEGER PRIMARY KEY, username TEXT NOT NULL, userid, branchid TEXT NOT NULL)");
+    
   }
 
   Future<int> saveHistory(History history) async {
@@ -51,7 +52,7 @@ class DatabaseHelper {
 
   Future<List<History>> getHistory(String userid) async {
     var dbClient = await db;
-    List<Map> list = await dbClient.rawQuery('SELECT * FROM History');
+    List<Map> list = await dbClient.rawQuery('SELECT * FROM History ORDER BY datetime desc');
     List<History> latesthistory = new List();
     for (int i = 0; i < list.length; i++) {
       var history = new History(list[i]["vehiclenumber"], list[i]["datetime"],
