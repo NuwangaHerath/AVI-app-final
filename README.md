@@ -1,2 +1,2 @@
 # AVI-app-final
- Since the dificulties have occured when pushing to master, new chnages are added here
+This repository contains the source code for the AVI, vehicle number plate recognition system.
